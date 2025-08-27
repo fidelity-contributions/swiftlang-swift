@@ -1,9 +1,9 @@
-function(generate_plist project_name project_version target)
+function(generate_plist bundle_identifier bundle_name project_version target)
   set(PLIST_INFO_PLIST "Info.plist")
-  set(PLIST_INFO_NAME "${project_name}")
+  set(PLIST_INFO_NAME "${bundle_name}")
 
   # Underscores aren't permitted in the bundle identifier.
-  string(REPLACE "_" "" PLIST_INFO_UTI "com.apple.dt.runtime.${PLIST_INFO_NAME}")
+  string(REPLACE "_" "" PLIST_INFO_UTI "com.apple.dt.runtime.${bundle_identifier}")
   set(PLIST_INFO_VERSION "${project_version}")
   set(PLIST_INFO_BUILD_VERSION "${project_version}")
 
